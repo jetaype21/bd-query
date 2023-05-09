@@ -55,3 +55,15 @@ _Medicamentos_
 
   SELECT * FROM tipos_medicamentos;
 ```
+
+### Porciones medicamentos
+
+```
+  CREATE TABLE porciones_medicamentos(
+    porcion_medicamento_id SERIAL PRIMARY KEY NOT NULL,
+    porcion_medicamento_nombre VARCHAR(30) NOT NULL,
+    porcion_medicamento_descripcion VARCHAR(255) NOT NULL
+  );
+
+  SELECT * FROM porciones_medicamentos;
+```
