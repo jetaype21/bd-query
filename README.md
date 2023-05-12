@@ -4,6 +4,20 @@
 
 ---
 
+### general
+
+```
+  CREATE TABLE estados(
+    estado_id SERIAL PRIMARY KEY NOT NULL,
+    estado_nombre VARCHAR(25) NOT NULL,
+    estado_descripcion VARCHAR(150) NOT NULL
+  );
+
+  SELECT * FROM estados;
+```
+
+---
+
 _Personas_
 
 ### Generos
@@ -66,4 +80,19 @@ _Medicamentos_
   );
 
   SELECT * FROM porciones_medicamentos;
+```
+
+---
+
+_Citas_
+
+### Tipos citas
+
+```
+  CREATE TABLE tipos_citas (
+    tipo_cita_id SERIAL PRIMARY KEY NOT NULL,
+    tipo_cita_nombre VARCHAR(25) NOT NULL
+  );
+
+  SELECT * FROM tipos_citas;
 ```
