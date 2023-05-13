@@ -103,6 +103,8 @@ _Citas_
 
 _Personas_
 
+### Tabla personas
+
 ```
   CREATE TABLE personas(
     persona_id SERIAL PRIMARY KEY NOT NULL,
@@ -123,6 +125,8 @@ _Personas_
 
 _Medicamentos_
 
+### Tabla medicamentos
+
 ```
   CREATE TABLE medicamentos (
     medicamento_id SERIAL PRIMARY KEY NOT NULL,
@@ -142,6 +146,8 @@ _Medicamentos_
 
 _Citas_
 
+### Tabla citas
+
 ```
   CREATE TABLE citas(
     cita_id SERIAL PRIMARY KEY NOT NULL,
@@ -160,6 +166,8 @@ _Citas_
 
 _Recetas_
 
+### Tabla recetas
+
 ```
   CREATE TABLE recetas(
     receta_id SERIAL PRIMARY KEY NOT NULL,
@@ -171,4 +179,36 @@ _Recetas_
   );
 
   SELECT * FROM recetas;
+```
+
+### Tabla receta detalles
+
+```
+  CREATE TABLE receta_detalles (
+    receta_detalle_id SERIAL PRIMARY KEY,
+    medicamento_cantidad INT DEFAULT 1,
+    medicamento_num_notificaciones INT DEFAULT 1,
+    medicamento_intervalo_notificaciones INTERVAL DEFAULT '8 hours',
+    medicamento_receta_creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado_id INT NOT NULL REFERENCES estados(estado_id),
+    receta_id INT NOT NULL REFERENCES recetas(receta_id),
+    medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id)
+  );
+
+  SELECT * FROM receta_detalles;
+```
+
+### TABLA NOTIFICACIONES
+
+```
+  CREATE TABLE notificaciones (
+    notificacion_id SERIAL NOT NULL PRIMARY KEY,
+    notificacion_fecha DATE NOT NULL,
+    notificacion_hora TIME NOT NULL,
+    notificacion_confirmada TIMESTAMP DEFAULT NULL,
+    estado_id INT NOT NULL REFERENCES estados(estado_id) ,
+    receta_detalle_id INT NOT NULL REFERENCES receta_detalles(receta_detalle_id)
+  );
+
+  SELECT * FROM notificaciones;
 ```
