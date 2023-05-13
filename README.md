@@ -1,10 +1,16 @@
+# _Indice_
+
+1. [Creacion de tablas](#creacion-de-tablas)
+1. [Tablas independiente](#tablas-independientes)
+1. [Tablas relacionadas](#tablas-relacionadas)
+
 # CREACION DE TABLAS
 
 ## Tablas independientes
 
 ---
 
-### general
+### Estados
 
 ```
   CREATE TABLE estados(
