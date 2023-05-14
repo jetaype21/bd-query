@@ -38,7 +38,7 @@ _Personas_
   SELECT * FROM generos;
 ```
 
-### Tipo personas
+### Tipos personas
 
 ```
   CREATE TABLE tipos_personas (
@@ -159,7 +159,7 @@ _Citas_
     cita_id SERIAL PRIMARY KEY NOT NULL,
     cita_hora TIME NOT NULL,
     cita_fecha DATE NOT NULL,
-    estado_id INT NOT NULL REFERENCES estados(estado_id),
+    estado_id INT NOT NULL REFERENCES DEFAULT 1 estados(estado_id),
     tipo_cita_id INT NOT NULL REFERENCES tipos_citas(tipo_cita_id),
     doctor_id INT NOT NULL REFERENCES personas(persona_id),
     paciente_id INT NOT NULL REFERENCES personas(persona_id)
@@ -180,7 +180,7 @@ _Recetas_
     receta_fecha DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     receta_precio_subtotal DECIMAL(6, 2) DEFAULT 0.00,
     receta_precio_total DECIMAL(6, 2) DEFAULT 0.00,
-    estado_id INT NOT NULL REFERENCES estados(estado_id) ,
+    estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id) ,
     cita_id INT NOT NULL UNIQUE REFERENCES citas(cita_id)
   );
 
@@ -196,7 +196,7 @@ _Recetas_
     medicamento_num_notificaciones INT DEFAULT 1,
     medicamento_intervalo_notificaciones INTERVAL DEFAULT '8 hours',
     medicamento_receta_creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    estado_id INT NOT NULL REFERENCES estados(estado_id),
+    estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id),
     receta_id INT NOT NULL REFERENCES recetas(receta_id),
     medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id)
   );
@@ -212,7 +212,7 @@ _Recetas_
     notificacion_fecha DATE NOT NULL,
     notificacion_hora TIME NOT NULL,
     notificacion_confirmada TIMESTAMP DEFAULT NULL,
-    estado_id INT NOT NULL REFERENCES estados(estado_id) ,
+    estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id) ,
     receta_detalle_id INT NOT NULL REFERENCES receta_detalles(receta_detalle_id)
   );
 
