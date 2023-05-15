@@ -24,6 +24,8 @@
 
 ---
 
+> _NOTA: ANTES DE CONTINUAR IR A [estados data](./DATOS.md#tabla-estados) y ejecutar el codigo de insercción de datos_
+
 _Personas_
 
 ### Generos
@@ -69,7 +71,7 @@ _Medicamentos_
 ```
   CREATE TABLE tipos_medicamentos(
     tipo_medicamento_id SERIAL PRIMARY KEY NOT NULL,
-    tipo_medicamento_nombre VARCHAR(20) NOT NULL,
+    tipo_medicamento_nombre VARCHAR(40) NOT NULL,
     tipo_medicamento_descripcion VARCHAR(150) NOT NULL
   );
 
@@ -97,7 +99,7 @@ _Citas_
 ```
   CREATE TABLE tipos_citas (
     tipo_cita_id SERIAL PRIMARY KEY NOT NULL,
-    tipo_cita_nombre VARCHAR(25) NOT NULL
+    tipo_cita_nombre VARCHAR(60) NOT NULL
   );
 
   SELECT * FROM tipos_citas;
@@ -141,8 +143,8 @@ _Medicamentos_
     medicamento_stock INT NOT NULL,
     medicamento_vencimiento TIMESTAMP NOT NULL,
     marca_id INT NOT NULL REFERENCES marcas(marca_id),
-    tipo_medicamento_id INT NOT NULL REFERENCES tipos_medicamentos(tipo_medicamento_id),
-    porcion_medicamento_id INT NOT NULL REFERENCES porciones_medicamentos(porcion_medicamento_id)
+    tipo_medicamento_id INT NOT NULL REFERENCES tipos_medicamentos(tipo_medicamento_id)
+    porcion_medicamento_id INT REFERENCES porciones_medicamentos(porcion_medicamento_id)
   );
 
   SELECT * FROM medicamentos;
@@ -204,7 +206,7 @@ _Recetas_
   SELECT * FROM receta_detalles;
 ```
 
-### TABLA NOTIFICACIONES
+### TABLA notificaciones
 
 ```
   CREATE TABLE notificaciones (
