@@ -18,7 +18,7 @@
 | 1         | pendiente     | la actividad aun no se a iniciado            |
 | 2         | en curso      | la actividad esta en proceso                 |
 | 3         | completado    | la actividad ah sido completado exitosamente |
-| 4         | completado    | la actividad ah sido no ah sido completado   |
+| 4         | incompleto    | la actividad ah sido no ah sido completado   |
 
 > Codigo sql
 
@@ -681,4 +681,90 @@ _Medicamentos_
     (default, 'Losartán', 150, '2024-11-30 13:00:00', 4, 10, 12, 65.99);
 
     SELECT * FROM medicamentos;
+```
+
+---
+
+_citas_
+
+```
+  -- 1	= "Cita virtual - llamada telefónico"
+  -- 2	= "Cita virtual - videoconferencia"
+  -- 3	= "Cita virtual - correo electrónico"
+  -- 4	= "Cita presencial"
+
+  -- 1	= "pendiente"
+  -- 2	= "en curso"
+  -- 3	= "completado"
+  -- 4	= "incompleto"
+
+  -- (id, hora, fecha, estado, tipo, doctor, paciente)
+
+  INSERT INTO citas VALUES
+    (default, '10:00:00', '19/5/2023', default, 1, 3 , 55 ),
+    (default, '12:00:00', '14/5/2023', 3, 1, 5 , 20 ),
+    (default, '12:00:00', '11/5/2023', 3, 3, 2 , 45 ),
+    (default, '12:00:00', '12/5/2023', 4, 3, 8 , 48 ),
+    (default, '12:00:00', '12/5/2023', 4, 3, 8 , 49 ),
+    (default, '11:00:00', '11/5/2023', 3, 3, 8 , 49 ),
+    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 69 ),
+    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 38 ),
+    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 65 ),
+    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 26 ),
+    (default, '11:00:00', '17/5/2023', 2, 3, 8 , 57 ),
+    (default, '11:00:00', '1/6/2023', default, 3, 8 , 31 ),
+    (default, '11:00:00', '2/6/2023', default, 3, 11 , 34 ),
+    (default, '09:00:00', '2/6/2023', default, 3, 9 , 85 ),
+    (default, '09:00:00', '3/6/2023', default, 4, 8 , 51 ),
+    (default, '09:00:00', '5/6/2023', default, 4, 3 , 23 ),
+    (default, '09:00:00', '4/6/2023', default, 4, 4 , 70 ),
+    (default, '09:00:00', '4/6/2023', default, 4, 2 , 32 ),
+    (default, '09:00:00', '3/6/2023', default, 4, 1 , 79 ),
+    (default, '12:00:00', '5/6/2023', default, 3, 1 , 38 ),
+    (default, '12:00:00', '5/6/2023', default, 2, 3 , 58 ),
+    (default, '12:00:00', '6/5/2023', default, 2, 9 , 28 );
+
+
+    SELECT * FROM citas;
+```
+
+_Recetas_
+
+### Tabla recetas
+
+```
+ -- (receta_id , receta_precio_subtotal , receta_precio_total, estado_id, cita_id );
+
+  -- 1	= "pendiente"
+  -- 2	= "en curso"
+  -- 3	= "completado"
+  -- 4	= "incompleto"
+
+  INSERT INTO recetas VALUES
+  (default, default, default, 3, 3),
+  (default, default, default, 3, 4),
+  (default, default, default, 3, 7),
+
+  (default, default, default, 2, 8),
+  (default, default, default, 2, 9),
+  (default, default, default, 2, 10),
+  (default, default, default, 2, 11),
+  (default, default, default, 2, 12),
+
+  (default, default, default, 1, 1),
+  (default, default, default, 1, 2),
+  (default, default, default, 1, 13),
+  (default, default, default, 1, 14),
+  (default, default, default, 1, 15),
+  (default, default, default, 1, 16),
+  (default, default, default, 1, 17),
+  (default, default, default, 1, 18),
+  (default, default, default, 1, 19),
+  (default, default, default, 1, 20),
+  (default, default, default, 1, 21),
+  (default, default, default, 1, 22),
+  (default, default, default, 1, 23);
+
+  SELECT * FROM recetas;
+
 ```

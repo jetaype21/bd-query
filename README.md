@@ -179,7 +179,6 @@ _Recetas_
 ```
   CREATE TABLE recetas(
     receta_id SERIAL PRIMARY KEY NOT NULL,
-    receta_fecha DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
     receta_precio_subtotal DECIMAL(6, 2) DEFAULT 0.00,
     receta_precio_total DECIMAL(6, 2) DEFAULT 0.00,
     estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id) ,
