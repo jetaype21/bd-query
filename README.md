@@ -138,13 +138,13 @@ _Medicamentos_
 ```
   CREATE TABLE medicamentos (
     medicamento_id SERIAL PRIMARY KEY NOT NULL,
-    medicamento_nombre VARCHAR(50) NOT NULL UNIQUE,
-    medicamento_precio DECIMAL(6, 2) NOT NULL,
+    medicamento_nombre VARCHAR(50) NOT NULL,
     medicamento_stock INT NOT NULL,
     medicamento_vencimiento TIMESTAMP NOT NULL,
     marca_id INT NOT NULL REFERENCES marcas(marca_id),
     tipo_medicamento_id INT NOT NULL REFERENCES tipos_medicamentos(tipo_medicamento_id)
     porcion_medicamento_id INT REFERENCES porciones_medicamentos(porcion_medicamento_id)
+    medicamento_precio DECIMAL(6, 2) NOT NULL,
   );
 
   SELECT * FROM medicamentos;
