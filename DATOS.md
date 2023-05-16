@@ -768,3 +768,39 @@ _Recetas_
   SELECT * FROM recetas;
 
 ```
+
+### Tabla receta detalles
+
+```
+  -- ( receta_detalle_id,  medicamento_num_notificaciones , medicamento_intervalo_notificaciones,medicamento_receta_creado, estado_id, receta_id,medicamento_id, medicamento_cantidad)
+
+
+  INSERT INTO receta_detalles VALUES
+  (default, 2,  default, default, 3, 1, 1, 2),
+  (default, 3,  default, default, 3, 2, 2, 3),
+  (default, 3,  default, default, 3, 2, 10, 3),
+  (default, 2,  default, default, 3, 2, 23, 2),
+  (default, 4,  default, default, 3, 3, 2, 4),
+  (default, 2,  default, default, 3, 3, 8, 2);
+
+  SELECT * FROM receta_detalles;
+```
+
+### tabla notificaciones
+
+```
+
+-- ( notificacion_id, notificacion_fecha , notificacion_hora , notificacion_confirmada , estado_id , receta_detalle_id )
+
+  INSERT INTO notificaciones VALUES
+  (default, '2023-05-14', '18:00:00', '2023-05-14 06:05:00', 3, 1 ),
+  (default, '2023-05-11', '18:00:00', '2023-05-14 06:05:00', 3, 2 ),
+  (default, '2023-05-11', '03:00:00', '2023-05-15 03:09:00', 3, 3 ),
+  (default, '2023-05-11', '11:00:00', '2023-05-15 11:03:00', 3, 4 ),
+  (default, '2023-05-11', '11:00:00', '2023-05-11 17:05:00', 3, 5 ),
+  (default, '2023-05-11', '11:00:00', '2023-05-14 01:05:00', 3, 6 );
+
+  SELECT * FROM notificaciones;
+
+
+```

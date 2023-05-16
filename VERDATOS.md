@@ -68,7 +68,7 @@
   SELECT * FROM vista_citas;
 ```
 
-### mostrar recaetados
+### mostrar recetados
 
 ```
 
@@ -81,4 +81,43 @@
 	INNER JOIN estados es ON es.estado_id = re.estado_id;
 
   select * from vista_recetas;
+```
+
+### mostrar medicamentos
+
+```
+  CREATE VIEW vista_medicamentos AS SELECT
+    me.medicamento_id,
+    me.medicamento_nombre,
+    me.medicamento_stock,
+    me.medicamento_vencimiento,
+    ma.marca_nombre,
+    tm.tipo_medicamento_nombre,
+    pm.porcion_medicamento_nombre,
+    me.medicamento_precio
+  from medicamentos me
+  INNER JOIN marcas ma ON me.marca_id = ma.marca_id
+  INNER JOIN tipos_medicamentos tm ON me.tipo_medicamento_id = tm.tipo_medicamento_id
+  INNER JOIN porciones_medicamentos pm ON me.porcion_medicamento_id = pm.porcion_medicamento_id;
+
+  select * from vista_medicamentos;
+```
+
+### receta_detalles
+
+```
+  create view vista_receta_detalles AS SELECT rd.receta_detalle_id, vr.receta_id , vr.paciente, vr.medico, es.estado_nombre, vm.*  FROM receta_detalles rd
+    INNER JOIN estados es ON rd.estado_id = es.estado_id
+    INNER JOIN vista_recetas vr ON rd.receta_id = vr.receta_id
+    INNER JOIN vista_medicamentos vm ON rd.medicamento_id = vm.medicamento_id;
+
+    select *  from vista_receta_detalles;
+```
+
+### notificaciones
+
+```
+  noti.notificacion_id, vrd.receta_id, vrd.receta_detalle_id, noti.notificacion_fecha ||' '|| noti.notificacion_hora notificacion, noti.notificacion_confirmada, es.estado_nombre, vrd.medicamento_nombre, vrd.paciente, vrd.medico FROM notificaciones noti
+      INNER JOIN vista_receta_detalles vrd ON noti.receta_detalle_id = vrd.receta_detalle_id
+      INNER JOIN estados es ON noti.estado_id = es.estado_id
 ```

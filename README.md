@@ -193,13 +193,13 @@ _Recetas_
 ```
   CREATE TABLE receta_detalles (
     receta_detalle_id SERIAL PRIMARY KEY,
-    medicamento_cantidad INT DEFAULT 1,
     medicamento_num_notificaciones INT DEFAULT 1,
     medicamento_intervalo_notificaciones INTERVAL DEFAULT '8 hours',
     medicamento_receta_creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id),
     receta_id INT NOT NULL REFERENCES recetas(receta_id),
     medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id)
+    medicamento_cantidad INT DEFAULT 1,
   );
 
   SELECT * FROM receta_detalles;
