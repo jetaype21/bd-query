@@ -16,10 +16,10 @@
   -- paciente_id = 1
 
     CREATE VIEW vista_pacientes AS SELECT
-      p.persona_id, p.persona_nombre || ' ' || p.persona_apellido paciente, p.persona_telefono, p.persona_email, p.persona_edad, tp.tipo_persona_nombre, g.genero_nombre
-    FROM personas p
-    INNER JOIN tipos_personas tp ON p.tipo_persona_id = 1
-    INNER JOIN generos g ON p.genero_id = g.genero_id;
+      per.persona_id, per.persona_nombre || ' ' || per.persona_apellido paciente, per.persona_telefono, per.persona_email, per.persona_edad, tp.tipo_persona_nombre
+    FROM (select * from personas where tipo_persona_id = 1) per
+    INNER JOIN tipos_personas tp ON tp.tipo_persona_id = per.tipo_persona_id
+    INNER JOIN generos ge ON per.genero_id = ge.genero_id;
 
     select * from vista_pacientes;
 ```
@@ -30,10 +30,10 @@
   -- medico_id = 2
 
     CREATE VIEW vista_medicos AS SELECT
-      p.persona_id, p.persona_nombre || ' ' || p.persona_apellido paciente, p.persona_telefono, p.persona_email, p.persona_edad, tp.tipo_persona_nombre, g.genero_nombre
-    FROM personas p
-    INNER JOIN tipos_personas tp ON p.tipo_persona_id = 2
-    INNER JOIN generos g ON p.genero_id = g.genero_id;
+      per.persona_id, per.persona_nombre || ' ' || per.persona_apellido medico, per.persona_telefono, per.persona_email, per.persona_edad, tp.tipo_persona_nombre
+    FROM (select * from personas where tipo_persona_id = 2) per
+    INNER JOIN tipos_personas tp ON tp.tipo_persona_id = per.tipo_persona_id
+    INNER JOIN generos ge ON per.genero_id = ge.genero_id;
 
     select * from vista_medicos;
 ```
