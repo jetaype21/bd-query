@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seleeciona fechas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: rgb(4, 49, 81);
+        color: white;
+        font-style: italic;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      main {
+        width: 89%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      button,
+      input {
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        margin-left: 3px;
+        border-radius: 5px;
+        background-color: rgb(7, 76, 162);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form id="formSubmit">
+        <label for="date">Seleccione fecha:</label>
+        <input type="datetime-local" id="date" placeholder="ingrese fecha" />
+
+        <button type="submit">generar</button>
+      </form>
+
+      <div>
+        <cite>Click encima para copiar</cite>
+
+        <p>FECHA:<span class="valueDate fecha"></span></p>
+        <p>HORA: <span class="valueDate hora"></span></p>
+        <p>FECHA Y HORA: <span class="valueDate fechahora"></span></p>
+      </div>
+    </main>
+
+    <script>
+      const datetime = document.querySelector("#date");
+      const formSubmit = document.querySelector("#formSubmit");
+      const fechahora = document.querySelector(".fechahora");
+      const fecha = document.querySelector(".fecha");
+      const hora = document.querySelector(".hora");
+      const valueDate = document.querySelectorAll(".valueDate");
+
+      formSubmit.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let fechavalor = new Date(datetime.value).toLocaleDateString();
+        let horavalor = new Date(datetime.value).toLocaleTimeString();
+
+        if (!datetime.value) {
+          return;
+        }
+
+        fecha.textContent = fechavalor;
+        hora.textContent = horavalor;
+        fechahora.textContent = `${fechavalor} ${horavalor}`;
+      });
+
+      valueDate.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          navigator.clipboard.writeText(item.textContent);
+
+          alert("valor copiado");
+        });
+      });
+    </script>
+  </body>
+</html>
