@@ -347,9 +347,9 @@ _Citas_
 | 85         | "Sara"         | "Rey"            | "7890127 "  | "sara.rey@yahoo.com"           | "97890127 "      | 31           | 1               | 2         |
 | 86         | "Joaquín"      | "Ortiz"          | "89012378"  | "joaquin.ortiz@hotmail.com"    | "989012378"      | 47           | 1               | 1         |
 
-```|
-  INSERT INTO| personas VALUES|
-    (default,| 'María', 'González', '12345678', 'maria.gonzalez@gmail.com', '912345678', 25, 2, 2),
+```
+  INSERT INTO personas VALUES
+    (default, 'María', 'González', '12345678', 'maria.gonzalez@gmail.com', '912345678', 25, 2, 2),
     (default, 'Juan', 'Pérez', '23456789', 'juan.perez@hotmail.com', '923456789', 30, 2, 1),
     (default, 'Ana', 'Martínez', '34567890', 'ana.martinez@yahoo.com', '934567890', 45, 2, 2),
     (default, 'Pedro', 'Sánchez', '45678901', NULL, '945678901', 18, 2, 1),
@@ -712,28 +712,28 @@ _citas_
   -- (id, hora, fecha, estado, tipo, doctor, paciente)
 
   INSERT INTO citas VALUES
-    (default, '10:00:00', '19/5/2023', default, 1, 3 , 55 ),
-    (default, '12:00:00', '14/5/2023', 3, 1, 5 , 20 ),
-    (default, '12:00:00', '11/5/2023', 3, 3, 2 , 45 ),
-    (default, '12:00:00', '12/5/2023', 4, 3, 8 , 48 ),
-    (default, '12:00:00', '12/5/2023', 4, 3, 8 , 49 ),
-    (default, '11:00:00', '11/5/2023', 3, 3, 8 , 49 ),
-    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 69 ),
-    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 38 ),
-    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 65 ),
-    (default, '07:00:00', '17/5/2023', 2, 3, 8 , 26 ),
-    (default, '11:00:00', '17/5/2023', 2, 3, 8 , 57 ),
-    (default, '11:00:00', '1/6/2023', default, 3, 8 , 31 ),
-    (default, '11:00:00', '2/6/2023', default, 3, 11 , 34 ),
-    (default, '09:00:00', '2/6/2023', default, 3, 9 , 85 ),
-    (default, '09:00:00', '3/6/2023', default, 4, 8 , 51 ),
-    (default, '09:00:00', '5/6/2023', default, 4, 3 , 23 ),
-    (default, '09:00:00', '4/6/2023', default, 4, 4 , 70 ),
-    (default, '09:00:00', '4/6/2023', default, 4, 2 , 32 ),
-    (default, '09:00:00', '3/6/2023', default, 4, 1 , 79 ),
-    (default, '12:00:00', '5/6/2023', default, 3, 1 , 38 ),
-    (default, '12:00:00', '5/6/2023', default, 2, 3 , 58 ),
-    (default, '12:00:00', '6/5/2023', default, 2, 9 , 28 );
+    (default, '10:00:00', '2023-05-19', default, 1, 3 , 55 ),
+    (default, '12:00:00', '2023-05-14', 3, 1, 5 , 20 ),
+    (default, '12:00:00', '2023-05-11', 3, 3, 2 , 45 ),
+    (default, '12:00:00', '2023-05-12', 4, 3, 8 , 48 ),
+    (default, '12:00:00', '2023-05-12', 4, 3, 8 , 49 ),
+    (default, '11:00:00', '2023-05-11', 3, 3, 8 , 49 ),
+    (default, '07:00:00', '2023-05-17', 2, 3, 8 , 69 ),
+    (default, '07:00:00', '2023-05-17', 2, 3, 8 , 38 ),
+    (default, '07:00:00', '2023-05-17', 2, 3, 8 , 65 ),
+    (default, '07:00:00', '2023-05-17', 2, 3, 8 , 26 ),
+    (default, '11:00:00', '2023-05-17', 2, 3, 8 , 57 ),
+    (default, '11:00:00', '2023-06-01', default, 3, 8 , 31 ),
+    (default, '11:00:00', '2023-06-02', default, 3, 11 , 34 ),
+    (default, '09:00:00', '2023-06-02', default, 3, 9 , 85 ),
+    (default, '09:00:00', '2023-06-03', default, 4, 8 , 51 ),
+    (default, '09:00:00', '2023-06-05', default, 4, 3 , 23 ),
+    (default, '09:00:00', '2023-06-04', default, 4, 4 , 70 ),
+    (default, '09:00:00', '2023-06-04', default, 4, 2 , 32 ),
+    (default, '09:00:00', '2023-06-03', default, 4, 1 , 79 ),
+    (default, '12:00:00', '2023-06-05', default, 3, 1 , 38 ),
+    (default, '12:00:00', '2023-06-05', default, 2, 3 , 58 ),
+    (default, '12:00:00', '2023-05-06', default, 2, 9 , 28 );
 
 
     SELECT * FROM citas;
@@ -773,8 +773,7 @@ _Recetas_
   (default, default, default, 1, 19),
   (default, default, default, 1, 20),
   (default, default, default, 1, 21),
-  (default, default, default, 1, 22),
-  (default, default, default, 1, 23);
+  (default, default, default, 1, 22);
 
   SELECT * FROM recetas;
 
