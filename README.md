@@ -165,9 +165,9 @@ _Medicamentos_
     medicamento_stock INT NOT NULL,
     medicamento_vencimiento TIMESTAMP NOT NULL,
     marca_id INT NOT NULL REFERENCES marcas(marca_id),
-    tipo_medicamento_id INT NOT NULL REFERENCES tipos_medicamentos(tipo_medicamento_id)
-    porcion_medicamento_id INT REFERENCES porciones_medicamentos(porcion_medicamento_id)
-    medicamento_precio DECIMAL(6, 2) NOT NULL,
+    tipo_medicamento_id INT NOT NULL REFERENCES tipos_medicamentos(tipo_medicamento_id),
+    porcion_medicamento_id INT REFERENCES porciones_medicamentos(porcion_medicamento_id),
+    medicamento_precio DECIMAL(6, 2) NOT NULL
   );
 
   SELECT * FROM medicamentos;
@@ -221,7 +221,7 @@ _Recetas_
     medicamento_receta_creado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id),
     receta_id INT NOT NULL REFERENCES recetas(receta_id),
-    medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id)
+    medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id),
     medicamento_cantidad INT DEFAULT 1,
   );
 
