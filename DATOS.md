@@ -696,6 +696,8 @@ _citas_
 
 ### citas
 
+> _Usar la pagina para agilizar fechas [Link](https://jetaype21.github.io/bd-query/)_
+
 ```
   -- 1	= "Cita virtual - llamada telefónico"
   -- 2	= "Cita virtual - videoconferencia"
