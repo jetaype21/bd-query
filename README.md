@@ -222,7 +222,7 @@ _Recetas_
     estado_id INT NOT NULL DEFAULT 1 REFERENCES estados(estado_id),
     receta_id INT NOT NULL REFERENCES recetas(receta_id),
     medicamento_id INT NOT NULL REFERENCES medicamentos(medicamento_id),
-    medicamento_cantidad INT DEFAULT 1,
+    medicamento_cantidad INT DEFAULT 1
   );
 
   SELECT * FROM receta_detalles;
