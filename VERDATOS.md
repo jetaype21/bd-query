@@ -51,6 +51,9 @@
     FROM vista_medicos
     LEFT JOIN vista_citas ON vista_citas.doctor_id = vista_medicos.persona_id
     WHERE vista_citas.doctor_id IS NULL;
+
+    -- ver por categoria
+    select COUNT(*), tipo_medicamento_nombre from vista_medicamentos GROUP BY tipo_medicamento_nombre
 ```
 
 ### mostrar citas
