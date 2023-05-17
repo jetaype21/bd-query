@@ -2,7 +2,22 @@
 
 1. [Creacion de tablas](#creacion-de-tablas)
 1. [Tablas independiente](#tablas-independientes)
+
+   - [estados](#estados)
+   - [generos](#generos)
+   - [tipos personas](#tipos-personas)
+   - [marcas](#marcas)
+   - [tipos medicamentos](#tipos-medicamentos)
+   - [tipos porciones](#porciones-medicamentos)
+   - [tipos citas](#tipos-citas)
+
 1. [Tablas relacionadas](#tablas-relacionadas)
+   - [personas](#tabla-personas)
+   - [medicamentos](#tabla-medicamentos)
+   - [citas](#tabla-citas)
+   - [recetas](#tabla-recetas)
+   - [recetas detalles](#tabla-receta-detalles)
+   - [notificaciones](#tabla-notificaciones)
 
 # CREACION DE TABLAS
 

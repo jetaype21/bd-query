@@ -21,7 +21,14 @@
     INNER JOIN tipos_personas tp ON tp.tipo_persona_id = per.tipo_persona_id
     INNER JOIN generos ge ON per.genero_id = ge.genero_id;
 
+    -- ver todos los pacientes
     select * from vista_pacientes;
+
+    --ver pacientes sin citas registrados
+    SELECT vista_pacientes.persona_id, vista_pacientes.paciente
+    FROM vista_pacientes
+    LEFT JOIN vista_citas ON vista_citas.paciente_id = vista_pacientes.persona_id
+    WHERE vista_citas.paciente_id IS NULL;
 ```
 
 ### mostrar medicos
@@ -35,7 +42,15 @@
     INNER JOIN tipos_personas tp ON tp.tipo_persona_id = per.tipo_persona_id
     INNER JOIN generos ge ON per.genero_id = ge.genero_id;
 
+    -- todos lo medicos
     select * from vista_medicos;
+
+    -- medicos sin interaccion
+
+    SELECT vista_medicos.persona_id, vista_medicos.medico
+    FROM vista_medicos
+    LEFT JOIN vista_citas ON vista_citas.doctor_id = vista_medicos.persona_id
+    WHERE vista_citas.doctor_id IS NULL;
 ```
 
 ### mostrar citas
@@ -65,7 +80,11 @@
     INNER JOIN personas per ON rcitas.doctor_id = per.persona_id
     INNER JOIN generos ge ON ge.genero_id = per.genero_id;
 
+  -- todas las citas
   SELECT * FROM vista_citas;
+
+  -- segun status
+  SELECT * FROM vista_citas WHERE "estado cita" = 'en curso';
 ```
 
 ### mostrar recetados

@@ -8,6 +8,13 @@
   - [tablas tipos_medicamentos](#tabla-tipos-medicamentos)
   - [tablas porciones medicamentos](#tabla-porciones-medicamentos)
   - [tablas tipos citas](#tabla-tipos-citas)
+- [Tablas relacionadas](#tablas-relacionadas)
+  - [personas](#tabla-personas)
+  - [medicamentos](#tabla-medicamentos)
+  - [citas](#citas)
+  - [recetas](#tabla-recetas)
+  - [recetas detalles](#tabla-receta-detalles)
+  - [notificaciones](#tabla-notificaciones)
 
 ## TABLA INDEPENDIENTES
 
@@ -686,6 +693,8 @@ _Medicamentos_
 ---
 
 _citas_
+
+### citas
 
 ```
   -- 1	= "Cita virtual - llamada telefónico"
