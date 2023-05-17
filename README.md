@@ -184,7 +184,7 @@ _Citas_
     cita_id SERIAL PRIMARY KEY NOT NULL,
     cita_hora TIME NOT NULL,
     cita_fecha DATE NOT NULL,
-    estado_id INT NOT NULL REFERENCES DEFAULT 1 estados(estado_id),
+    estado_id INT NOT NULL DEFAULT 1  REFERENCES estados(estado_id),
     tipo_cita_id INT NOT NULL REFERENCES tipos_citas(tipo_cita_id),
     doctor_id INT NOT NULL REFERENCES personas(persona_id),
     paciente_id INT NOT NULL REFERENCES personas(persona_id)
