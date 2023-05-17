@@ -1,5 +1,13 @@
 # _Indice_
 
+|Referencias bibliográfica| enlace|
+|-| -|		
+|Marcas de medicamentos| https://consultorsalud.com/top-10-companias-farmaceuticas-mas-grandes-2019-a-nivel-mundial/|
+|Tipos de medicamentos| https://www.genfar.com/te-cuidamos/aprende-sobre-el-uso-racional-de-los-diferentes-tipos-de-medicamentos/|
+|Generador de nombres random| https://fossbytes.com/tools/random-name-generator|
+|Tipos de porciones| https://medlineplus.gov/spanish/ency/patientinstructions/000337.htm|
+
+
 1. [Creacion de tablas](#creacion-de-tablas)
 1. [Tablas independiente](#tablas-independientes)
 
